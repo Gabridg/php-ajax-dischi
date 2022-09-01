@@ -52,11 +52,29 @@ $discs = [
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href=".../prog_vue/css/style.css">
+    <link rel="stylesheet" href="../prog_vue/css/style.css">
     
-    <title>Document</title>
+    <title>Spoolefy</title>
 </head>
 <body>
-    
+    <header>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Spotify_logo_without_text.svg/168px-Spotify_logo_without_text.svg.png?20160123212544" alt="" class="logo">
+        <h1>Spoolefy</h1>
+    </header>
+    <main>
+        <div class="container">
+            <ul class="d-flex">
+                <?php foreach($discs as $disc) : ?>
+                    <li class="song-card">
+                        <img src="<?= $disc['poster'] ?>" alt="" class="card-img">
+                        <h4> <?= $disc['title'] ?> </h4>
+                        <p><?= $disc['author'] ?></p>
+                        <p><?= $disc['year'] ?></p>
+                        <p><?= $disc['genre'] ?></p>
+                    </li>
+                    <?php endforeach; ?>
+                </ul>
+        </div>
+    </main>
 </body>
 </html>
